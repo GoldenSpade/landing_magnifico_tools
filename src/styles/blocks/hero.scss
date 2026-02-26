@@ -1,0 +1,283 @@
+@use '../utils/vars' as *;
+
+.hero {
+  padding: 80px 0 100px;
+  border-bottom: 1px solid $gray-200;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  // ─── Left column ───────────────────────────
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    max-width: 500px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    color: $black;
+  }
+
+  &__desc {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: $gray-500;
+    max-width: 420px;
+  }
+
+  // Form: input + button
+  &__form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__input-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input-icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px 0 44px;
+    font-size: 15px;
+    color: $gray-700;
+    background: $white;
+    border: 1.5px solid $gray-200;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color $tran-dur;
+
+    &::placeholder {
+      color: $gray-500;
+    }
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    height: 50px;
+    padding: 0 22px;
+    background-color: $blue;
+    color: $white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background $tran-dur;
+
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+
+  // Logos row
+  &__logos {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: $gray-100;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      flex: 1;
+      min-width: 0;
+      height: 24px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: left center;
+
+      &:not(:last-child) {
+        margin-right: 14px;
+        padding-right: 14px;
+        border-right: 1px solid $gray-200;
+      }
+    }
+  }
+
+  // ─── Right column ──────────────────────────
+
+  &__visual {
+    flex: 1.1;
+    position: relative;
+    min-width: 0;
+  }
+
+  &__stars {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    width: 180px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  // Browser frame
+  &__browser {
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  &__browser-body {
+    position: relative;
+    line-height: 0;
+  }
+
+  &__browser-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: 58px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gray-700;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    transition: transform $tran-dur, background $tran-dur;
+
+    svg {
+      margin-left: 3px;
+    }
+
+    &:hover {
+      background: $white;
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+  }
+
+  // Decorative plus signs
+  &__plus {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 2;
+    pointer-events: none;
+
+    &--blue-1 {
+      bottom: 50px;
+      left: -24px;
+      color: $blue;
+    }
+
+    &--orange {
+      bottom: 16px;
+      right: -16px;
+      color: #f59e0b;
+    }
+
+    &--blue-2 {
+      bottom: 100px;
+      right: -32px;
+      color: $blue;
+      font-size: 16px;
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────
+
+@media (max-width: 925px) {
+  .hero {
+    padding: 50px 0 60px;
+
+    &__inner {
+      flex-direction: column;
+      gap: 44px;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 42px;
+    }
+
+    &__visual {
+      width: 100%;
+    }
+
+    &__stars {
+      right: -10px;
+      width: 130px;
+    }
+
+    &__plus {
+      &--blue-1 { left: 8px; }
+      &--orange { right: 8px; }
+      &--blue-2 { right: 8px; }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 40px 0 50px;
+
+    &__title {
+      font-size: 36px;
+      letter-spacing: -1px;
+    }
+
+    &__form {
+      flex-direction: column;
+    }
+
+    &__btn {
+      height: 48px;
+    }
+
+    &__logos {
+      flex-wrap: wrap;
+      gap: 10px;
+
+      img:not(:last-child) {
+        margin-right: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}

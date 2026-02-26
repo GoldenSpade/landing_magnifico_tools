@@ -1,0 +1,201 @@
+@use '../utils/vars' as *;
+
+// ============================================
+// HEADER + NAV
+// ============================================
+
+$chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $white;
+  border-bottom: 1px solid $gray-200;
+}
+
+// ─── Desktop nav ────────────────────────────
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: $nav-height;
+
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 40px;
+    font-size: $logo-fsz;
+    font-weight: 800;
+    color: $black;
+    letter-spacing: -0.5px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    font-size: $nav-fsz;
+    font-weight: 500;
+    color: $gray-700;
+    border-radius: 6px;
+    transition: background $tran-dur, color $tran-dur;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $gray-100;
+      color: $gray-900;
+    }
+
+    // Chevron ↓
+    &--arrow::after {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-left: 2px;
+      background-image: $chevron;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  &__login {
+    padding: 8px 14px;
+    font-size: $nav-fsz;
+    font-weight: 500;
+    color: $blue;
+    border-radius: 6px;
+    transition: background $tran-dur;
+
+    &:hover {
+      background-color: $blue-light;
+    }
+  }
+
+  &__signup {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    background-color: $blue;
+    color: $white;
+    font-size: $nav-fsz;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background $tran-dur;
+
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+
+  // Burger (hidden on desktop)
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background $tran-dur;
+    margin-left: auto;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $gray-700;
+      border-radius: 2px;
+      transition: transform $tran-dur, opacity $tran-dur;
+    }
+
+    // Анимация в крестик
+    &.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &.is-active span:nth-child(2) { opacity: 0; }
+    &.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+// ─── Mobile nav ─────────────────────────────
+
+.nav-mobile {
+  display: none;
+  border-top: 1px solid $gray-200;
+  background-color: $white;
+  padding: 8px 0 20px;
+
+  &--open {
+    display: block;
+  }
+
+  &__list {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $gray-700;
+    border-bottom: 1px solid $gray-100;
+    transition: color $tran-dur;
+
+    &:hover {
+      color: $gray-900;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+
+    .nav__login {
+      text-align: center;
+      border: 1px solid $gray-200;
+      border-radius: 6px;
+    }
+
+    .nav__signup {
+      justify-content: center;
+    }
+  }
+}
+
+// ─── Responsive ─────────────────────────────
+
+@media (max-width: 925px) {
+  .nav {
+    &__list,
+    &__actions {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+  }
+}

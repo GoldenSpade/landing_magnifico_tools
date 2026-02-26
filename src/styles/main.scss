@@ -1,0 +1,15 @@
+@use './utils/vars' as *;
+@use './reset';
+
+@use './blocks/container';
+@use './blocks/header';
+@use './blocks/hero';
+@use './blocks/enjoy';
+@use './blocks/footer';
+
+body {
+  font-family: $font;
+  font-size: 16px;
+  color: $gray-900;
+  background-color: $white;
+}
