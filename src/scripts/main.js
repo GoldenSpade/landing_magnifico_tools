@@ -1,3 +1,2 @@
-import '../styles/main.scss';
-
 import './nav-mobile';
+import './workflow-tabs';

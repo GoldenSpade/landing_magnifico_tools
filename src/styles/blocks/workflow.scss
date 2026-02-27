@@ -1,0 +1,233 @@
+@use '../utils/vars' as *;
+
+.workflow {
+  padding: 80px 0 100px;
+  border-bottom: 1px solid $gray-200;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+
+  // ─── Left: text ────────────────────────────
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    max-width: 500px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: $black;
+  }
+
+  // Tab switcher
+  &__tabs {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    margin-bottom: 24px;
+    background-color: $gray-100;
+    border: 1px solid $gray-200;
+    border-radius: 10px;
+  }
+
+  &__tab {
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: $gray-500;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background $tran-dur, color $tran-dur, box-shadow $tran-dur;
+
+    &:hover {
+      color: $gray-900;
+    }
+
+    &--active {
+      background-color: $white;
+      color: $gray-900;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__desc {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $gray-500;
+    max-width: 460px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: $blue;
+    transition: gap $tran-dur, color $tran-dur;
+
+    &:hover {
+      color: $blue-hover;
+      gap: 10px;
+    }
+  }
+
+  // ─── Right: browser ────────────────────────
+
+  &__visual {
+    flex: 1.1;
+    position: relative;
+    min-width: 0;
+  }
+
+  &__stars {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    width: 180px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &__browser {
+    position: relative;
+    z-index: 1;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  &__browser-body {
+    position: relative;
+    line-height: 0;
+  }
+
+  &__browser-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: 58px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gray-700;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    transition: transform $tran-dur, background $tran-dur;
+
+    svg {
+      margin-left: 3px;
+    }
+
+    &:hover {
+      background: $white;
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+  }
+
+  // Decorative plus signs
+  &__plus {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 2;
+    pointer-events: none;
+
+    &--blue-1 {
+      bottom: 50px;
+      left: -24px;
+      color: $blue;
+    }
+
+    &--orange {
+      bottom: 16px;
+      right: -16px;
+      color: #f59e0b;
+    }
+
+    &--blue-2 {
+      bottom: 100px;
+      right: -32px;
+      color: $blue;
+      font-size: 16px;
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────
+
+@media (max-width: 925px) {
+  .workflow {
+    padding: 50px 0 60px;
+
+    &__inner {
+      flex-direction: column;
+      gap: 44px;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__visual {
+      width: 100%;
+    }
+
+    &__stars {
+      right: -10px;
+      width: 130px;
+    }
+
+    &__plus {
+      &--blue-1 { left: 8px; }
+      &--orange { right: 8px; }
+      &--blue-2 { right: 8px; }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .workflow {
+    padding: 40px 0 50px;
+
+    &__title {
+      font-size: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    &__tabs {
+      width: 100%;
+    }
+
+    &__tab {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+    }
+  }
+}
