@@ -8,6 +8,27 @@
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f3f4f6;
+}
+
+// Webkit scrollbar (Chrome, Safari, Edge)
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+  transition: background 250ms;
+
+  &:hover {
+    background: #2563eb;
+  }
 }
 
 a {
