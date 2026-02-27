@@ -2,9 +2,13 @@
 
 A responsive marketing landing page for **Magnifico** — a team project management platform.
 
+**[→ Live Demo](https://goldenspade.github.io/landing_magnifico_tools/)**
+
 ## Live Preview
 
-> Open `dist/index.html` in a browser after running `npm run build`, or launch a dev server with `npm run dev`.
+**[https://goldenspade.github.io/landing_magnifico_tools/](https://goldenspade.github.io/landing_magnifico_tools/)**
+
+> Or run locally: start a dev server with `npm run dev`, or open `dist/index.html` after `npm run build`.
 
 ---
 
@@ -124,3 +128,9 @@ npm run preview
 - **No JavaScript frameworks** — the interactivity (mobile nav, tab switching) is simple enough to handle cleanly in vanilla JS, keeping the bundle minimal
 - **CSS-only desktop dropdowns** — `:hover` on the parent `<li>` triggers visibility; the absolutely positioned panel remains inside the element, so hovering the dropdown itself keeps the parent `:hover` active
 - **Stylesheet in `<head>` via `<link>`** — instead of importing CSS through the JS module (which is always deferred), the stylesheet is linked directly in HTML so it loads synchronously, preventing any flash of unstyled content on first render
+
+---
+
+## Demo
+
+[https://goldenspade.github.io/landing_magnifico_tools/](https://goldenspade.github.io/landing_magnifico_tools/)
