@@ -1,0 +1,36 @@
+@use '../utils/vars' as *;
+
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background-color: $blue;
+  color: $white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity $tran-dur, visibility $tran-dur, transform $tran-dur, background $tran-dur;
+  z-index: 50;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: $blue-hover;
+  }
+
+  @media (max-width: 576px) {
+    bottom: 20px;
+    right: 16px;
+  }
+}

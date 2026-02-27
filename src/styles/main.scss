@@ -10,6 +10,7 @@
 @use './blocks/workflow';
 @use './blocks/cta';
 @use './blocks/footer';
+@use './blocks/back-to-top';
 
 body {
   font-family: $font;

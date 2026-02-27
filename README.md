@@ -14,9 +14,10 @@ A responsive marketing landing page for **Magnifico** — a team project managem
 |------|---------|---------|
 | [Vite](https://vitejs.dev/) | ^6.4 | Build tool & dev server |
 | [Sass](https://sass-lang.com/) | ^1.97 | CSS preprocessor |
+| [Lenis](https://lenis.darkroom.engineering/) | ^1.x | Smooth scroll |
 | Vanilla JS | ES2020+ | Interactive behaviour |
 
-No frameworks, no UI libraries — just HTML, SCSS, and JavaScript.
+No frameworks, no UI libraries — just HTML, SCSS, and JavaScript (plus Lenis for smooth scrolling).
 
 ---
 
@@ -78,6 +79,10 @@ landing_magnifico_tools/
 - **Desktop dropdowns** — revealed on hover with CSS `opacity` + `visibility` transition; chevron rotates 180° on open
 - **Mobile burger menu** — slides in with `nav-mobile--open` class; closes on outside click, on link click, or when resizing above 925 px
 - **Accordion sub-menus** — mobile nav items expand/collapse on click with `max-height` transition; only one section open at a time
+
+### Smooth Scroll & UX
+- **Lenis** — lightweight smooth scroll library; provides natural momentum scrolling across the entire page
+- **Back-to-top button** — appears after scrolling 400 px, uses Lenis to animate the return to top; fades in/out with a CSS transform transition
 
 ### Workflow Tabs
 - Three tabs: Research, Plan, Design

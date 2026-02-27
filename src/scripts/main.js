@@ -1,6 +1,7 @@
 import Lenis from 'lenis';
 import './nav-mobile';
 import './workflow-tabs';
+import { initBackToTop } from './back-to-top';
 
 // ─── Smooth scroll ────────────────────────────
 
@@ -15,3 +16,5 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+initBackToTop(lenis);
