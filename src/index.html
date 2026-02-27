@@ -24,15 +24,95 @@
           <ul class="nav__list">
             <li class="nav__item">
               <a href="#" class="nav__link nav__link--arrow">Products</a>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-body">
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Task Boards</span>
+                    <span class="nav__dropdown-desc">Visual kanban boards for any workflow</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Timeline &amp; Gantt</span>
+                    <span class="nav__dropdown-desc">Plan sprints and track milestones</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Shared Docs</span>
+                    <span class="nav__dropdown-desc">Collaborative notes and wikis</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">File Storage</span>
+                    <span class="nav__dropdown-desc">Centralized asset management</span>
+                  </a>
+                </div>
+              </div>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link nav__link--arrow">Solutions</a>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-body">
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">For Startups</span>
+                    <span class="nav__dropdown-desc">Move fast without breaking things</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">For Remote Teams</span>
+                    <span class="nav__dropdown-desc">Stay in sync across time zones</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">For Agencies</span>
+                    <span class="nav__dropdown-desc">Manage client projects at scale</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">For Enterprise</span>
+                    <span class="nav__dropdown-desc">Security and control for large teams</span>
+                  </a>
+                </div>
+              </div>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link nav__link--arrow">Services</a>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-body">
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Onboarding</span>
+                    <span class="nav__dropdown-desc">Get your team set up quickly</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Integrations</span>
+                    <span class="nav__dropdown-desc">Connect 50+ tools you already use</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">API Access</span>
+                    <span class="nav__dropdown-desc">Build custom workflows on Magnifico</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Priority Support</span>
+                    <span class="nav__dropdown-desc">Direct access to our expert team</span>
+                  </a>
+                </div>
+              </div>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link nav__link--arrow">Help Center</a>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-body">
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Documentation</span>
+                    <span class="nav__dropdown-desc">Guides, references and tutorials</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Video Courses</span>
+                    <span class="nav__dropdown-desc">Learn Magnifico step by step</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Community</span>
+                    <span class="nav__dropdown-desc">Ask questions and share tips</span>
+                  </a>
+                  <a href="#" class="nav__dropdown-link">
+                    <span class="nav__dropdown-name">Contact Us</span>
+                    <span class="nav__dropdown-desc">Reach our support team directly</span>
+                  </a>
+                </div>
+              </div>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link">Pricing</a>
@@ -57,11 +137,57 @@
       <div class="nav-mobile">
         <div class="container">
           <ul class="nav-mobile__list">
-            <li><a href="#" class="nav-mobile__link">Products</a></li>
-            <li><a href="#" class="nav-mobile__link">Solutions</a></li>
-            <li><a href="#" class="nav-mobile__link">Services</a></li>
-            <li><a href="#" class="nav-mobile__link">Help Center</a></li>
-            <li><a href="#" class="nav-mobile__link">Pricing</a></li>
+            <li class="nav-mobile__item nav-mobile__item--has-sub">
+              <button class="nav-mobile__toggle" aria-expanded="false">
+                Products
+                <svg class="nav-mobile__toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <ul class="nav-mobile__sub">
+                <li><a href="#" class="nav-mobile__sub-link">Task Boards</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Timeline &amp; Gantt</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Shared Docs</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">File Storage</a></li>
+              </ul>
+            </li>
+            <li class="nav-mobile__item nav-mobile__item--has-sub">
+              <button class="nav-mobile__toggle" aria-expanded="false">
+                Solutions
+                <svg class="nav-mobile__toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <ul class="nav-mobile__sub">
+                <li><a href="#" class="nav-mobile__sub-link">For Startups</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">For Remote Teams</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">For Agencies</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">For Enterprise</a></li>
+              </ul>
+            </li>
+            <li class="nav-mobile__item nav-mobile__item--has-sub">
+              <button class="nav-mobile__toggle" aria-expanded="false">
+                Services
+                <svg class="nav-mobile__toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <ul class="nav-mobile__sub">
+                <li><a href="#" class="nav-mobile__sub-link">Onboarding</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Integrations</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">API Access</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Priority Support</a></li>
+              </ul>
+            </li>
+            <li class="nav-mobile__item nav-mobile__item--has-sub">
+              <button class="nav-mobile__toggle" aria-expanded="false">
+                Help Center
+                <svg class="nav-mobile__toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <ul class="nav-mobile__sub">
+                <li><a href="#" class="nav-mobile__sub-link">Documentation</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Video Courses</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Community</a></li>
+                <li><a href="#" class="nav-mobile__sub-link">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="nav-mobile__item">
+              <a href="#" class="nav-mobile__link">Pricing</a>
+            </li>
           </ul>
           <div class="nav-mobile__actions">
             <a href="#" class="nav__login">Log In</a>
