@@ -1,6 +1,6 @@
 # Magnifico — Team Projects Landing Page
 
-A responsive marketing landing page for a fictional SaaS product — **Magnifico**, a team project management platform. Built as a portfolio project to demonstrate modern frontend development practices.
+A responsive marketing landing page for **Magnifico** — a team project management platform.
 
 ## Live Preview
 
