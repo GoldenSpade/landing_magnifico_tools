@@ -65,6 +65,7 @@
     line-height: 1.7;
     color: $gray-500;
     max-width: 460px;
+    transition: opacity 200ms ease;
   }
 
   &__link {

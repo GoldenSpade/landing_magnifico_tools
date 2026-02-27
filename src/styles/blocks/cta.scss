@@ -1,0 +1,78 @@
+@use '../utils/vars' as *;
+
+.cta {
+  padding: 80px 0 100px;
+
+  &__banner {
+    border-radius: 20px;
+    padding: 70px 40px;
+    background: linear-gradient(135deg, #1e40ae 0%, #701a75 100%);
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: $white;
+  }
+
+  &__desc {
+    margin: 0 auto 32px;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background-color: $blue;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background $tran-dur;
+
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────
+
+@media (max-width: 925px) {
+  .cta {
+    padding: 50px 0 60px;
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cta {
+    padding: 40px 0 50px;
+
+    &__banner {
+      padding: 50px 24px;
+    }
+
+    &__title {
+      font-size: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    &__btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
