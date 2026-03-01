@@ -120,8 +120,8 @@
           </ul>
 
           <div class="nav__actions">
-            <a href="#" class="nav__login">Log In</a>
-            <a href="#" class="nav__signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            <a href="#" class="nav__login" data-modal="login">Log In</a>
+            <a href="#" class="nav__signup" data-modal="signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
           </div>
 
           <button class="nav__burger" aria-label="Open menu">
@@ -190,8 +190,8 @@
             </li>
           </ul>
           <div class="nav-mobile__actions">
-            <a href="#" class="nav__login">Log In</a>
-            <a href="#" class="nav__signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            <a href="#" class="nav__login" data-modal="login">Log In</a>
+            <a href="#" class="nav__signup" data-modal="signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -213,7 +213,7 @@
                   <img src="/images/hero/hero-input-icon.png" alt="" class="hero__input-icon" />
                   <input type="email" class="hero__input" placeholder="Enter work email" />
                 </div>
-                <button class="hero__btn">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
+                <button class="hero__btn" data-modal="signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
               </div>
 
               <div class="hero__logos">
@@ -351,7 +351,7 @@
         <div class="cta__banner">
           <h2 class="cta__title">Join the community today</h2>
           <p class="cta__desc">Thousands of teams already use Magnifico to ship better work, faster. Get started for free — no credit card required.</p>
-          <a href="#" class="cta__btn">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="cta__btn" data-modal="signup">Sign Up Free <svg class="icon-arrow" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </section>
@@ -371,6 +371,121 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- Login modal -->
+    <div class="modal" id="modal-login" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
+      <div class="modal__box">
+        <button class="modal__close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <h2 class="modal__title" id="modal-login-title">Welcome back</h2>
+        <p class="modal__subtitle">Log in to your Magnifico account</p>
+
+        <form class="modal__form" novalidate>
+          <div class="modal__field">
+            <label class="modal__label" for="login-email">Email</label>
+            <div class="modal__input-wrap">
+              <input class="modal__input" type="email" id="login-email" data-validate="email" placeholder="you@example.com" autocomplete="email" />
+              <button type="button" class="modal__clear" aria-label="Clear field" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <span class="modal__error"></span>
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="login-password">Password</label>
+            <div class="modal__input-wrap modal__input-wrap--password">
+              <input class="modal__input" type="password" id="login-password" data-validate="password" placeholder="Your password" autocomplete="current-password" />
+              <button type="button" class="modal__clear" aria-label="Clear field" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <button type="button" class="modal__eye" aria-label="Show password">
+                <svg class="modal__eye-icon modal__eye-icon--show" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="modal__eye-icon modal__eye-icon--hide" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <span class="modal__error"></span>
+          </div>
+          <button type="submit" class="modal__submit">Log In</button>
+        </form>
+
+        <p class="modal__switch">Don't have an account? <button class="modal__switch-btn" data-open="signup">Sign Up</button></p>
+
+        <div class="modal__success">
+          <div class="modal__success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="modal__success-title">You're in!</h3>
+          <p class="modal__success-desc">Welcome back to Magnifico. Great to see you again.</p>
+          <button class="modal__success-btn">Go to Dashboard</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign Up modal -->
+    <div class="modal" id="modal-signup" role="dialog" aria-modal="true" aria-labelledby="modal-signup-title">
+      <div class="modal__box">
+        <button class="modal__close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <h2 class="modal__title" id="modal-signup-title">Get started free</h2>
+        <p class="modal__subtitle">Create your Magnifico account — no credit card required</p>
+
+        <form class="modal__form" novalidate>
+          <div class="modal__field">
+            <label class="modal__label" for="signup-name">Full name</label>
+            <div class="modal__input-wrap">
+              <input class="modal__input" type="text" id="signup-name" data-validate="name" placeholder="Your name" autocomplete="name" />
+              <button type="button" class="modal__clear" aria-label="Clear field" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <span class="modal__error"></span>
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="signup-email">Email</label>
+            <div class="modal__input-wrap">
+              <input class="modal__input" type="email" id="signup-email" data-validate="email" placeholder="you@example.com" autocomplete="email" />
+              <button type="button" class="modal__clear" aria-label="Clear field" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <span class="modal__error"></span>
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="signup-password">Password</label>
+            <div class="modal__input-wrap modal__input-wrap--password">
+              <input class="modal__input" type="password" id="signup-password" data-validate="password" placeholder="At least 8 characters" autocomplete="new-password" />
+              <button type="button" class="modal__clear" aria-label="Clear field" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <button type="button" class="modal__eye" aria-label="Show password">
+                <svg class="modal__eye-icon modal__eye-icon--show" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="modal__eye-icon modal__eye-icon--hide" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <span class="modal__error"></span>
+          </div>
+          <button type="submit" class="modal__submit">Create Account</button>
+        </form>
+
+        <p class="modal__switch">Already have an account? <button class="modal__switch-btn" data-open="login">Log In</button></p>
+
+        <div class="modal__success">
+          <div class="modal__success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="modal__success-title">Account created!</h3>
+          <p class="modal__success-desc">Welcome to Magnifico. You're all set — let's build something great together.</p>
+          <button class="modal__success-btn">Get Started</button>
+        </div>
+      </div>
+    </div>
 
     <button class="back-to-top" aria-label="Back to top">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

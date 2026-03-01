@@ -40,10 +40,12 @@ landing_magnifico_tools/
 │   ├── scripts/
 │   │   ├── main.js             # Entry JS — imports modules
 │   │   ├── nav-mobile.js       # Mobile nav & burger logic
-│   │   └── workflow-tabs.js    # Tab switcher with fade animation
+│   │   ├── workflow-tabs.js    # Tab switcher with fade animation
+│   │   ├── back-to-top.js      # Back-to-top button logic
+│   │   └── modal.js            # Login & Sign Up modal logic
 │   └── styles/
 │       ├── main.scss           # Root — imports all blocks
-│       ├── _reset.scss         # CSS reset
+│       ├── _reset.scss         # CSS reset + custom scrollbar
 │       ├── utils/
 │       │   └── _vars.scss      # Design tokens (colors, fonts, spacing)
 │       └── blocks/             # One file per section (BEM)
@@ -55,7 +57,9 @@ landing_magnifico_tools/
 │           ├── problems.scss
 │           ├── workflow.scss
 │           ├── cta.scss
-│           └── footer.scss
+│           ├── footer.scss
+│           ├── back-to-top.scss
+│           └── modal.scss
 ├── vite.config.js
 └── package.json
 ```
@@ -83,6 +87,13 @@ landing_magnifico_tools/
 - **Desktop dropdowns** — revealed on hover with CSS `opacity` + `visibility` transition; chevron rotates 180° on open
 - **Mobile burger menu** — slides in with `nav-mobile--open` class; closes on outside click, on link click, or when resizing above 925 px
 - **Accordion sub-menus** — mobile nav items expand/collapse on click with `max-height` transition; only one section open at a time
+
+### Auth Modals
+- **Log In & Sign Up modals** — open on clicking any corresponding button across the page (nav, hero, CTA); appear with a fade + slide-up animation over a blurred backdrop
+- **Client-side validation** — required fields, email format check, password minimum length; errors appear inline under each field and clear as the user types
+- **Success screen** — after a valid form submit the form is replaced with a confirmation message inside the modal
+- **Switch between modals** — inline link to swap between Log In and Sign Up without closing
+- **Accessible close** — × button, click on backdrop, or Escape key; page scroll is locked while the modal is open (via `lenis.stop()`)
 
 ### Smooth Scroll & UX
 - **Lenis** — lightweight smooth scroll library; provides natural momentum scrolling across the entire page

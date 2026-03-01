@@ -11,6 +11,7 @@
 @use './blocks/cta';
 @use './blocks/footer';
 @use './blocks/back-to-top';
+@use './blocks/modal';
 
 body {
   font-family: $font;
